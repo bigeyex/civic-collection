@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+
+  "name": "Civic Coding Collector for Github",
+  "description": "Collect civic coding repos in Github",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup/popup.html",
+    "default_title": "Click to login"
+  },
+  "permissions": [
+    "activeTab",
+    "https://ajax.googleapis.com/"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://github.com/*"],
+      "css": ["lib/select2.min.css", "gitbutton/gitbutton.css"],
+      "js": ["lib/jquery-2.1.4.min.js", "lib/select2.min.js","gitbutton/gitbutton.js"]
+    }
+    
+  ],
+  
+  "web_accessible_resources": ["gitbutton/gitbutton.template.html"]
+}

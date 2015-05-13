@@ -1,0 +1,20 @@
+.ccc-control-container{
+	padding: 0 10px;
+}
+
+.ccc-list-input{
+	width: 280px;
+}
+
+.ccc-suggested-lists{
+	margin-top: 5px;
+	margin-bottom: 0;
+}
+
+.ccc-control-container textarea{
+	width: 280px;
+}
+
+.ccc-suggested-lists li{
+	padding-left: 5px;
+}
