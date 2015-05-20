@@ -1,32 +1,36 @@
 <head>
 	<title>Civic Coding Collector</title>
+	<link href='http://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
 </head>
 
-<body>
-	{{> header}}
-	{{> projects}}
-	{{> lists}}
-	{{> ideas}}
-</body>
-
-<template name="header">
+<template name="layout">
 	<header class="masthead">
-      <div class="container">
-        <a href="/" class="masthead-logo">
-          <span class="mega-octicon octicon-package"></span>
-          Civic Coding Collector
-        </a>
-
-        <nav class="masthead-nav">
-			
-        </nav>
-      </div>
-    </header>
-</template>
-
-<template name="lists">
+	    <a href="/" class="masthead-logo">
+	      Civic Coding Collector
+	    </a>
 	
+	    <nav class="masthead-nav">
+			{{#if currentUser}}
+				<div class="user-name-tag">
+					{{currentUser.services.github.username}}
+					<a href="javascript:void(0);">Logout</a>
+				</div>
+			{{else}}
+				<a href="javascript:void(0);" class="github-signin-button"><span class="octicon octicon-mark-github"></span> Signin With Github</a>
+			{{/if}}
+	    </nav>
+    </header>
+	<div class="container">
+		{{> yield}}
+	</div>
 </template>
+
+
+<template name="home">
+	{{> lists}}
+</template>
+
+
 
 <template name="ideas">
 	

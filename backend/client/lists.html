@@ -1,0 +1,53 @@
+<template name="lists">
+	<div class="container block-for-lists">
+		<h2>Lists</h2>
+		<div class="list-of-lists horizontal-list">
+			{{#each lists}}
+				{{> listItem}}
+			{{/each}}
+			<div class="list-item new-list-link" title="Hackerspace">
+				<div class="list-title-new">
+					Create a New List
+				</div>
+				<div class="list-context">
+				</div>
+			</div>
+		</div>
+	</div>
+</template>
+
+<template name="listItem">
+	<div class="list-item" title="Hackerspace">
+		<div class="list-title">
+			{{#if editing}}
+				<input type="text" name="title" value="{{title}}"/>
+			{{else}}
+				{{title}}
+			{{/if}}
+		</div>
+		<div class="list-context">
+			<p class="list-desc">
+				{{#if editing}}
+					<textarea name="desc">{{desc}}</textarea>
+				{{else}}
+					{{desc}}
+				{{/if}}
+			</p>
+			<div class="list-vote">
+				<a href="#" class="up-vote"><span class="mega-octicon octicon-arrow-up"></span></a>
+				<span class="vote-count">{{votes}}</span>
+				<a href="#" class="down-vote"><span class="mega-octicon octicon-arrow-down"></span></a>
+			</div>
+			<div class="list-count">
+				<span class="octicon octicon-repo"></span> 7
+				{{#if editing}}
+				<a href="javascript:void(0);" class="save-button"><span class="octicon octicon-check"></span> Save</a>
+				<a href="javascript:void(0);" class="cancel-button"><span class="octicon octicon-x"></span> Cancel</a>
+				{{else}}
+				<a href="javascript:void(0);" class="edit-button"><span class="octicon octicon-pencil"></span> Edit</a>
+				<a href="javascript:void(0);" class="delete-button"><span class="octicon octicon-trashcan"></span></a>
+				{{/if}}
+			</div>
+		</div>
+	</div>
+</template>

@@ -1,0 +1,95 @@
+.block-for-lists{
+	h2{
+		color: @title-color;
+		font-size: 18px;
+		margin: 15px 0 5px;
+		line-height: 25px;
+		font-weight: normal;
+	}
+	.list-item{
+		display: inline-block;
+		width: 310px;
+		margin-right: 15px;
+		margin-bottom: 20px;
+		
+		.list-title, .list-title-new{
+			height: 120px;
+			line-height: 120px;
+			color: white;
+			font-size: 24px;
+			background: grey;
+			text-align: center;
+			vertical-align: center;
+			text-shadow: 0 2px 4px rgba(0,0,0,0.50);
+			border-radius: 5px 5px 0 0;
+		}
+		
+		.list-context{
+			border: 1px solid #ddd;
+			border-top: none;
+			background-color: #f7f7f7;
+			color: @grey-text-color;
+			border-radius: 0 0 5px 5px;
+			padding: 10px;
+			height: 65px;
+			overflow: hidden;
+			position: relative;
+			
+			.list-desc{
+				font-size: 14px;
+				width: 250px;
+				
+				textarea{
+					height: 30px;
+					width: 230px;
+				}
+			}
+			
+			.list-vote{
+				position: absolute;
+				right: 10px;
+				top: 10px;
+				width: 30px;
+				
+				a, .vote-count{
+					display: block;
+					font-size: 18px;
+					text-align: center;
+				}
+				
+				.mega-octicon{
+					font-size: 23px;
+					text-indent: 3px;
+					color: @grey-text-color;
+					cursor: pointer;
+				}
+			}
+			
+			.list-count{
+				position: absolute;
+				bottom: 10px;
+				left: 10px;
+				width: 260px;
+				
+				a{
+					color: @grey-text-color;
+					cursor: pointer;
+				}
+				
+				.delete-button{
+					float: right;
+				}
+			}
+		} // list-context
+	} // list-item
+	
+	.new-list-link{
+		cursor: pointer;
+		
+		.list-context{
+			background: none;
+			border: 1px dashed;
+			border-top: none;
+		}
+	}
+} // block-for-lists
