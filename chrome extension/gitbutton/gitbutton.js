@@ -9,6 +9,9 @@ if(pagehead){
       tags: true,
       tokenSeparators: [',', ' ']
     });
+    $('.ccc-list-input').on("select2:unselect", function(e){
+      console.log(e);
+    });
   });
 
 }
